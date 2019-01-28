@@ -9,9 +9,14 @@ const useResources = (resource) => {
     setResources(response.data);
   };
 
+  // useEffect - act the same as componentDidMount, componentDidUpdate, and componentWillUnmount
+  // if the argument inside the array changes, the function is called. Otherwise, the fucntion will not be called.
+  // In case of an object, function will be called as each object will be unique even though it may contain the same values as others.
   useEffect(() => {
+    console.log('resource >>', resource);
+    console.log('useEffect is called!');
     fetchResource(resource);
-  }, [resource]); // if the argument inside the array changes, the function is called. Otherwise, the fucntion will not be called.  In case of an object, function will be called as each object will be unique even though it may contain the same values as others.
+  }, [resource]);
 
   return resources;
 };

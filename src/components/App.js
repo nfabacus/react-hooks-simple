@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Button } from 'reactstrap';
+import SimpleStatus from './SimpleStatus';
 import ResourceList from './ResourceList';
 import UserList from './UserList';
 
@@ -8,6 +9,7 @@ const App = () => {
 
   return (
     <Container className="App pt-4">
+      <SimpleStatus />
       <UserList />
       <div>
         <Button color="primary" onClick={()=>setResource('posts')}>
