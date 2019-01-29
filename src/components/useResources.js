@@ -4,7 +4,7 @@ import axios from "axios";
 const useResources = (resource) => {
   const [resources, setResources] = useState([]);
 
-  const fetchResource = async (resource) => {
+  const fetchResources = async (resource) => {
     const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
     setResources(response.data);
   };
@@ -15,7 +15,7 @@ const useResources = (resource) => {
   useEffect(() => {
     console.log('resource >>', resource);
     console.log('useEffect is called!');
-    fetchResource(resource);
+    fetchResources(resource);
   }, [resource]);
 
   return resources;
