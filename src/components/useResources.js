@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
-import axios from "axios";
 
 const useResources = (resource) => {
   const [resources, setResources] = useState([]);
 
   const fetchResources = async (resource) => {
-    const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
-    setResources(response.data);
+    const response = await fetch(`https://jsonplaceholder.typicode.com/${resource}`);
+    const data = await response.json();
+    setResources(data);
   };
 
   // useEffect - act the same as componentDidMount, componentDidUpdate, and componentWillUnmount
