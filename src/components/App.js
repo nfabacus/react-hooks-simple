@@ -23,6 +23,6 @@ const App = () => {
       <ResourceList resource={resource} />
     </Container>
   );
-}
+};
 
 export default App;
